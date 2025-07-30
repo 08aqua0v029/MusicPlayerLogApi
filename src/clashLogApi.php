@@ -28,18 +28,30 @@
 
     try {
         // データベースに接続
-        $dbh = db_connect();
+        $pdo = db_connect();
 
         //例外処理を投げるようにする（throw）
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = $pdo->prepare("INSERT INTO clashLog (crashDate, crashType, crashDetails, crashLocation, buildModel, buildOsVersion)
+            VALUES (:crashDate, :crashType, :crashDetails, :crashLocation, :buildModel, :buildOsVersion)");
+
+        // bindPramで各種指定　:xxxで変数を$xxxに設定　PARAM_はデータ型
+        $sql->bindParam(':crashDate', $crashDate, PDO::PARAM_STR);
+        $sql->bindParam(':crashType', $crashType, PDO::PARAM_STR);
+        $sql->bindParam(':crashDetails', $crashDetails, PDO::PARAM_STR);
+        $sql->bindParam(':crashLocation', $crashLocation, PDO::PARAM_STR);
+        $sql->bindParam(':buildModel', $buildModel, PDO::PARAM_STR);
+        $sql->bindParam(':buildOsVersion', $osVer, PDO::PARAM_STR);
+
+        // SQL実行
+        $sql->execute();
     
         //データベース接続切断
-        $statement = null;
-        $dbh = null;
+        $pdo = null;
 
     } catch (PDOException $e) {
         header('Content-Type: text/plain; charset=UTF-8', true, 500);
-        // エラー内容は本番環境ではログファイルに記録して， Webブラウザには出さないほうが望ましい
         exit($e->getMessage()); 
     }
 

@@ -5,8 +5,8 @@
     define('DSN', 'mysql:host=db; dbname=logApiDb; charset=utf8');
     
     function db_connect(){
-        $dbh = new PDO(DSN, DB_USERNAME, DB_PASSWORD);
-        return $dbh;
+        $pdo = new PDO(DSN, DB_USERNAME, DB_PASSWORD);
+        return $pdo;
     }
 
 ?>
