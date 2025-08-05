@@ -43,7 +43,7 @@
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // prepareでSQL実行の準備
-            $sql = $pdo->prepare("INSERT INTO clashLog (crashDate, crashType, crashDetails, crashLocation, buildModel, buildOsVersion)
+            $sql = $pdo->prepare("INSERT INTO crashLog (crashDate, crashType, crashDetails, crashLocation, buildModel, buildOsVersion)
                 VALUES (:crashDate, :crashType, :crashDetails, :crashLocation, :buildModel, :buildOsVersion)");
 
             // bindPramで各種指定　:xxxで変数を$xxxに設定　PARAM_はデータ型
