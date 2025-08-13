@@ -1,5 +1,6 @@
 <?php
 
+    // TODO:.envなどで保管する方法に変更予定
     define('DB_USERNAME', 'user');
     define('DB_PASSWORD', '1234');
     define('DSN', 'mysql:host=db; dbname=logApiDb; charset=utf8');

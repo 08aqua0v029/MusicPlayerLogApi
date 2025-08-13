@@ -9,6 +9,7 @@
         exit;
     }
 
+    // TODO:.envなどで保管する方法に変更予定
     $username = "u6Kg5t2c";     // Basic認証User
     $userpass = "Zp6uaUzY";     // Basic認証Pass
 
@@ -74,5 +75,5 @@
         header('Status: Unauthorized');
         http_response_code(401);
 
-        echo header;
+        echo "401 Unauthorized";
     }
