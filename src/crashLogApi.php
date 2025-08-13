@@ -9,8 +9,8 @@
         exit;
     }
 
-    $username = "u6Kg5t2c";     // Basic認証User
-    $userpass = "Zp6uaUzY";     // Basic認証Pass
+    $username = "7QQHFCNv";     // Basic認証User
+    $userpass = "B57cJA2m";     // Basic認証Pass
 
     if($_SERVER['PHP_AUTH_USER'] == $username
         && $_SERVER['PHP_AUTH_PW'] == $userpass){
