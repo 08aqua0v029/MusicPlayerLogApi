@@ -3,7 +3,8 @@ services:
     build: .
     container_name: php-apache8.2
     ports:
-      - "8000:80"
+      - "8000:80"   # PHPアプリにアクセス
+      - "9003:9003" # Xdebug がホストに接続する
     volumes:
       - ./src:/var/www/html
     depends_on:
