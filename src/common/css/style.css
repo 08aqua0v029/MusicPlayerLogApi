@@ -1,0 +1,33 @@
+
+/* 電光掲示板のようなアニメーション */
+.loop-wrap {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.loop-area {
+    display: flex;
+    animation: loop-slide 20s infinite linear 1s both;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.content{
+    font-size: 20pt;
+    font-weight: bold;
+}
+.loop-area .content {
+  width: 500px;
+}
+@keyframes loop-slide {
+  from {
+    transform: translateX(1%)
+  }
+  to {
+    transform: translateX(-99%);
+  }
+}
+
+.art-file{
+  height: 350px;
+}
