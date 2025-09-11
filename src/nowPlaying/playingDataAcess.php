@@ -7,7 +7,7 @@
 
     // 継続処理
     while (true) {
-        $json = file_get_contents('../test/nowPlaying.json');   // JSONファイル取得
+        $json = file_get_contents('nowPlaying.json');   // JSONファイル取得
         $decoded = json_decode($json, true);    // JSONを1行表記にデコード
 
         if ($decoded === null) {

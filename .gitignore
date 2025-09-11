@@ -2,3 +2,4 @@
 .DS_Store
 .vscode/
 src/received_log.json
+src/nowPlaying/nowPlaying.json
