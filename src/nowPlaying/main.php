@@ -2,13 +2,13 @@
             <div class="d-flex justify-content-center">
                 <img id="tuneArt" class="art-file text-center" src="">
             </div>
-            <h2 class="my-2">
+            <h2 class="my-2" class="fs-2">
                 <span id="tuneTitle"></span>
             </h2>
-            <h3>
+            <h3 class="fs-5">
                 <span id="tuneArtist"></span>
             </h3>
-            <h4 class="my-2">
+            <h4 class="my-2 fs-5">
                 <span>
                     <span id="tuneNowTime"></span>
                 </span>
